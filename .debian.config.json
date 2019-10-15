@@ -1,0 +1,8 @@
+{
+  "dest": "./.installers/",
+  "icon": "./resources/icon.png",
+  "categories": [
+    "Utility",
+    "Office"
+  ]
+}

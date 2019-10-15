@@ -1,0 +1,43 @@
+{
+  "name": "typographer",
+  "productName": "Typographer",
+  "version": "1.0.0",
+  "description": "Typographical editor",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "xo src",
+    "fix": "xo --fix src",
+    "build": "electron-packager . --platform linux --arch x64 --out .dist/ --overwrite true --ignore='(yarn.*|\\/\\..*|\\.md$)' --executableName=$npm_package_name --icon=$npm_package_name",
+    "deb64": "electron-installer-debian --src .dist/$npm_package_productName-linux-x64/ --arch amd64 --config .debian.config.json"
+  },
+  "keywords": [
+    "typograph",
+    "yo"
+  ],
+  "author": {
+    "name": "Vano Devium",
+    "email": "vano.devium@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "eyo-kernel": "^2.5.6",
+    "typograf": "^6.11.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.50",
+    "electron": "8.2.3",
+    "electron-installer-debian": "^3.0.0",
+    "electron-packager": "^14.2.1",
+    "xo": "^0.29.1"
+  },
+  "xo": {
+    "space": true,
+    "global": [
+      "document"
+    ]
+  }
+}
