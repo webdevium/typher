@@ -1,0 +1,46 @@
+{
+  "name": "typher",
+  "productName": "Typher",
+  "genericName": "Typher",
+  "version": "1.0.0",
+  "description": "Typographic text editor",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "lint": "xo src",
+    "fix": "xo --fix src",
+    "build": "electron-packager . --platform linux --arch x64 --out .dist/ --overwrite true --ignore='(yarn.*|\\/\\..*|\\.md$)' --icon=$npm_package_productName",
+    "deb64": "electron-installer-debian --src .dist/$npm_package_productName-linux-x64/ --arch amd64 --config .debian.config.json"
+  },
+  "keywords": [
+    "typograph",
+    "yo",
+    "editor"
+  ],
+  "author": {
+    "name": "Vano Devium",
+    "email": "vano.devium@gmail.com",
+    "url": "https://www.devium.me/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "eyo-kernel": "^2.5.6",
+    "typograf": "^6.11.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.54",
+    "electron": "10.1.5",
+    "electron-installer-debian": "^3.1.0",
+    "electron-packager": "^15.1.0",
+    "xo": "^0.34.1"
+  },
+  "xo": {
+    "space": true,
+    "global": [
+      "document"
+    ]
+  }
+}
